@@ -1,0 +1,54 @@
+{
+  "serial": {
+    "port": "COM3",
+    "baudrate": 115200,
+    "timeout_seconds": 0.15,
+    "read_retries": 2
+  },
+  "motion": {
+    "update_rate_hz": 25,
+    "feedback_interval_seconds": 0.25,
+    "position_tolerance": 35
+  },
+  "servos": {
+    "hip": {
+      "id": 1,
+      "minimum_position": 0,
+      "center_position": 314,
+      "maximum_position": 1000,
+      "direction": 1
+    },
+    "knee": {
+      "id": 2,
+      "minimum_position": 0,
+      "center_position": 305,
+      "maximum_position": 1000,
+      "direction": 1
+    },
+    "right_hip": {
+      "id": 3,
+      "minimum_position": 0,
+      "center_position": 498,
+      "maximum_position": 1000,
+      "direction": -1
+    },
+    "right_knee": {
+      "id": 4,
+      "minimum_position": 0,
+      "center_position": 429,
+      "maximum_position": 1000,
+      "direction": -1
+    }
+  },
+  "walking": {
+    "poses": [
+      {"name": "neutral", "duration_seconds": 1.5, "hip_degrees": 0, "knee_degrees": 0},
+      {"name": "shift laterally (+z)", "duration_seconds": 1.2, "hip_degrees": 8, "knee_degrees": 0},
+      {"name": "lift foot (+y arc)", "duration_seconds": 1.2, "hip_degrees": 8, "knee_degrees": -25},
+      {"name": "swing leg", "duration_seconds": 1.4, "hip_degrees": -10, "knee_degrees": -25},
+      {"name": "place foot", "duration_seconds": 1.2, "hip_degrees": -10, "knee_degrees": 0},
+      {"name": "return to neutral", "duration_seconds": 1.5, "hip_degrees": 0, "knee_degrees": 0}
+    ]
+  }
+}
+

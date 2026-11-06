@@ -1,0 +1,19 @@
+[Unit]
+Description=Eridian robot servo boot test
+After=dev-ttyUSB0.device sound.target
+Wants=dev-ttyUSB0.device
+
+[Service]
+Type=oneshot
+User=pi
+WorkingDirectory=/opt/eridian-robot
+Environment=PYTHONUNBUFFERED=1
+# This template is health-only. Add --execute-motion --yes only after calibration,
+# mechanical support, and a tested hardware emergency cutoff.
+ExecStart=/opt/eridian-robot/.venv/bin/python -m quadruped.boot_test
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+

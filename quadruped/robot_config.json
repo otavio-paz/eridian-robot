@@ -1,0 +1,48 @@
+{
+  "calibrated": false,
+  "serial": {
+    "port": "/dev/ttyUSB0",
+    "baudrate": 115200,
+    "timeout_seconds": 0.15,
+    "read_retries": 2
+  },
+  "safety": {
+    "temperature_warning_c": 55,
+    "temperature_critical_c": 65,
+    "voltage_minimum_v": 9.0,
+    "voltage_maximum_v": 12.6,
+    "position_tolerance": 35,
+    "boot_nudge_degrees": 2.0,
+    "motion_duration_seconds": 2.0
+  },
+  "joints": {
+    "front_left_hip":  {"id": 1, "minimum_position": 400, "center_position": 500, "maximum_position": 600, "direction": 1},
+    "front_left_knee": {"id": 2, "minimum_position": 400, "center_position": 500, "maximum_position": 600, "direction": 1},
+    "front_right_hip": {"id": 3, "minimum_position": 400, "center_position": 500, "maximum_position": 600, "direction": -1},
+    "front_right_knee":{"id": 4, "minimum_position": 400, "center_position": 500, "maximum_position": 600, "direction": -1},
+    "rear_left_hip":   {"id": 5, "minimum_position": 400, "center_position": 500, "maximum_position": 600, "direction": 1},
+    "rear_left_knee":  {"id": 6, "minimum_position": 400, "center_position": 500, "maximum_position": 600, "direction": 1},
+    "rear_right_hip":  {"id": 7, "minimum_position": 400, "center_position": 500, "maximum_position": 600, "direction": -1},
+    "rear_right_knee": {"id": 8, "minimum_position": 400, "center_position": 500, "maximum_position": 600, "direction": -1}
+  },
+  "home": {
+    "joint_order": [
+      "front_left_knee", "front_right_knee", "rear_left_knee", "rear_right_knee",
+      "front_left_hip", "front_right_hip", "rear_left_hip", "rear_right_hip"
+    ],
+    "offset_degrees": {
+      "front_left_hip": 0, "front_left_knee": 0,
+      "front_right_hip": 0, "front_right_knee": 0,
+      "rear_left_hip": 0, "rear_left_knee": 0,
+      "rear_right_hip": 0, "rear_right_knee": 0
+    }
+  },
+  "gait": {
+    "leg_order": ["front_left", "rear_right", "front_right", "rear_left"],
+    "knee_lift_degrees": -6.0,
+    "hip_step_degrees": 5.0,
+    "seconds_per_joint": 2.0,
+    "pause_seconds": 0.5
+  },
+  "collision_zones": []
+}
